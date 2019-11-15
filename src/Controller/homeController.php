@@ -36,6 +36,12 @@ class homeController extends AbstractController
         return $this->render("news/news.html.twig",
                 ["titre"=>"Titre : $slug",
                 ]);
+    }
 
+    /**
+     * @Route("/profile", name="profile")
+     */
+    public function pourProfile(){
+        return $this->render("pages/profile.html.twig");
     }
 }
