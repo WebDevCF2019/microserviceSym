@@ -22,20 +22,20 @@ class homeController extends AbstractController
      *
      */
     public function homepage(){
-        return $this->render("base.html.twig");
+        return $this->render("news/homepage.html.twig");
     }
 
     /**
-     * @Route("/slug/{slug}", name="news")
+     * @Route("/slug/{slug}", name="article")
      */
     public function show($slug){
         //var_dump($slug,$_SERVER);
         // dump dans la barre de profiler
         dump($slug);
         // utilisation de twig (déjà chargé via AbstractController)
-        return $this->render("base.html.twig",
+        return $this->render("news/news.html.twig",
                 ["titre"=>"Titre : $slug",
-                "h1"=>"<h1>Titre : $slug</h1>"]);
+                ]);
 
     }
 }
