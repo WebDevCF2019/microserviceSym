@@ -24,6 +24,7 @@ class homeController extends AbstractController
      *
      */
     public function homepage(){
+
         return $this->render("news/homepage.html.twig");
     }
 
