@@ -32,12 +32,28 @@ class homeController extends AbstractController
      */
     public function show($slug){
 
-        dump($slug);
+
 
         // commentaires
-        $comments =["Wow c'est merveilleux!",
-            "Sublime, on en mangerait....",
-            "Qui veut du gâteau?"];
+        $comments =[
+            [
+                "nom"=>"Jean Claude Vandâne",
+                "url"=>"images/alien-profile.png",
+                "texte"=>"Wow c'est merveilleux!",
+            ],
+            [
+                "nom"=>"Steven Seagueule",
+                "url"=>"images/astronaut-profile.png",
+                "texte"=>"Sublime, on en mangerait....",
+            ],
+            [
+                "nom"=>"Christine Boutrain",
+                "url"=>"images/lightspeed.png",
+                "texte"=>"Qui veut du gâteau?",
+            ]
+        ];
+
+        dump($slug,$comments);
 
         // utilisation de twig (déjà chargé via AbstractController)
         return $this->render("news/news.html.twig",
