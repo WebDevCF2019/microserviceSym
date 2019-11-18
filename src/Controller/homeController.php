@@ -31,13 +31,19 @@ class homeController extends AbstractController
      * @Route("/slug/{slug}", name="article")
      */
     public function show($slug){
-        //var_dump($slug,$_SERVER);
-        // dump dans la barre de profiler
+
         dump($slug);
+
+        // commentaires
+        $comments =["Wow c'est merveilleux!",
+            "Sublime, on en mangerait....",
+            "Qui veut du gâteau?"];
+
         // utilisation de twig (déjà chargé via AbstractController)
         return $this->render("news/news.html.twig",
-                ["titre"=>"Titre : $slug",
-                 "heart"=>$slug,
+                [   "titre"=>"Titre : $slug",
+                    "heart"=>$slug,
+                    "commentaires"=>$comments,
                 ]);
     }
 
